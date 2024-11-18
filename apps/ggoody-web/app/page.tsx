@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+
+import { Button } from "@hancycle/ui/react";
 
 export default function Home() {
   return (
@@ -17,9 +20,9 @@ export default function Home() {
           <li>
             Get started by editing <code>app/page.tsx</code>.
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li>Save and see your changes instantly.</li>``
         </ol>
-
+        <Button>React 버튼!!!!</Button>
         <div className={styles.ctas}>
           <a
             className={styles.primary}

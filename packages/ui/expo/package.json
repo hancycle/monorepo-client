@@ -1,9 +1,0 @@
-{
-  "name": "ui-expo",
-  "version": "0.1.0",
-  "main": "index.ts",
-  "dependencies": {
-    "styled-components": "^latest",
-    "react-native-web": "^latest"
-  }
-}
