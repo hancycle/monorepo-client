@@ -1,44 +1,39 @@
-import { Image, StyleSheet, Platform } from "react-native";
+import { Image, StyleSheet, Platform, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 
+import Animated from "react-native-reanimated";
+import Button from "@hancycle/ui/react/components/Button";
+
 import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-      headerImage={
-        <Image
-          source={require("@/assets/images/partial-react-logo.png")}
-          style={styles.reactLogo}
-        />
-      }
-    >
-      <WebView
-        source={{ uri: "http://192.168.219.105:3000" }}
-        style={styles.webview}
-        userAgent={
-          Platform.OS === "ios" ? "ggoody-app-ios" : "ggoody-app-android"
-        }
-        originWhitelist={["*"]} // 모든 도메인 허용
-        javaScriptEnabled={true} // JavaScript 활성화
-      />
-      <WebView
-        source={{ uri: "http://192.168.219.105:5173" }}
-        style={styles.webview}
-        userAgent={
-          Platform.OS === "ios" ? "ggoody-app-ios" : "ggoody-app-android"
-        }
-        originWhitelist={["*"]} // 모든 도메인 허용
-        javaScriptEnabled={true} // JavaScript 활성화
-      />
-    </ParallaxScrollView>
+    <View style={styles.container}>
+      <Animated.ScrollView>
+        <Animated.View>
+          <Text>Home</Text>
+          <Button>Button</Button>
+          <WebView
+            source={{ uri: "http://192.168.219.111:5173" }}
+            style={styles.webview}
+            userAgent={
+              Platform.OS === "ios" ? "ggoody-app-ios" : "ggoody-app-android"
+            }
+            originWhitelist={["*"]} // 모든 도메인 허용
+            javaScriptEnabled={true} // JavaScript 활성화
+          />
+        </Animated.View>
+      </Animated.ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    borderWidth: 1,
+    borderStyle: "solid",
+  },
   titleContainer: {
     flexDirection: "row",
     alignItems: "center",
