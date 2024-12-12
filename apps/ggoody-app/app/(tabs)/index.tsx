@@ -2,9 +2,7 @@ import { Image, StyleSheet, Platform, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 
 import Animated from "react-native-reanimated";
-import Button from "@hancycle/ui/react/components/Button";
-
-import ParallaxScrollView from "@/components/ParallaxScrollView";
+import Button from "@hancycle/ui/components/react/Button";
 
 export default function HomeScreen() {
   return (
@@ -33,22 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     borderStyle: "solid",
-  },
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
   },
   webview: {
     borderStyle: "solid",
