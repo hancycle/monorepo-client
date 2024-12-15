@@ -1,4 +1,4 @@
-export enum scaleSolid {
+export enum solid {
   "color-scale-common-white" = "#FFFFFF",
   "color-scale-common-black" = "#FFFFFF",
   "color-scale-gray-50" = "#F5F6F7",

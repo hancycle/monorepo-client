@@ -1,1 +1,1 @@
-export * from "./color/scale";
+export * from "./color";
