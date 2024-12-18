@@ -1,0 +1,81 @@
+import { TypoScale } from "../scale";
+
+export const TypoSemanticGgoody = {
+  "typo-semantic-title-1": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-40"],
+    fontWeight: TypoScale["typo-scale-font-weight-bold"],
+    lineHeight: TypoScale["typo-scale-line-height-small"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-wide"],
+  },
+  "typo-semantic-title-2": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-32"],
+    fontWeight: TypoScale["typo-scale-font-weight-bold"],
+    lineHeight: TypoScale["typo-scale-line-height-small"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-wide"],
+  },
+  "typo-semantic-subtitle-1": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-28"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-small"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-wide"],
+  },
+  "typo-semantic-subtitle-2": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-24"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-small"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-wide"],
+  },
+  "typo-semantic-subtitle-3": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-20"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-small"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-wide"],
+  },
+  "typo-semantic-body-b-1": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-18"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-medium"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-medium"],
+  },
+  "typo-semantic-body-b-2": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-16"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-medium"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-medium"],
+  },
+  "typo-semantic-body-b-3": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-15"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-medium"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-medium"],
+  },
+  "typo-semantic-body-b-4": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-14"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-medium"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-medium"],
+  },
+  "typo-semantic-caption-b-1": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-13"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-medium"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-medium"],
+  },
+  "typo-semantic-caption-b-2": {
+    fontFamily: TypoScale["typo-scale-font-family-sans"],
+    fontSize: TypoScale["typo-scale-font-size-12"],
+    fontWeight: TypoScale["typo-scale-font-weight-semibold"],
+    lineHeight: TypoScale["typo-scale-line-height-medium"],
+    letterSpacing: TypoScale["typo-scale-letter-spacing-medium"],
+  },
+} as const;
