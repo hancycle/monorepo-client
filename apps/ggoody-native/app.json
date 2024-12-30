@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ggoody-app",
-    "slug": "ggoody-app",
+    "name": "ggoody-native",
+    "slug": "ggoody-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
