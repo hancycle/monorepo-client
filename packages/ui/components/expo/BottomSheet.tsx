@@ -1,3 +1,4 @@
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
   BottomSheetModal,
   BottomSheetView,
@@ -61,6 +62,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export { BottomSheetModalProvider, BottomSheetView, BottomSheetModal };
+export {
+  BottomSheetModalProvider,
+  BottomSheetView,
+  BottomSheetModal,
+  GestureHandlerRootView,
+};
 
 export default BottomSheet;

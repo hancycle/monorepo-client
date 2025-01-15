@@ -6,13 +6,6 @@ import Animated, {
   useScrollViewOffset,
 } from "react-native-reanimated";
 
-import { Collapsible } from "@/components/Collapsible";
-import { ExternalLink } from "@/components/ExternalLink";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { IconSymbol } from "@/components/ui/IconSymbol";
-
 const HEADER_HEIGHT = 250;
 
 export default function TabTwoScreen() {

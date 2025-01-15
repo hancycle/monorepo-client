@@ -1,10 +1,10 @@
 import styled from "styled-components/native";
 
-const Button = styled.TouchableOpacity`
-  background-color: #2563eb;
-  padding: 12px 24px;
-  border-radius: 8px;
-`;
+// const Button = styled.TouchableOpacity`
+//   background-color: #2563eb;
+//   padding: 12px 24px;
+//   border-radius: 8px;
+// `;
 
 const ButtonText = styled.Text`
   color: white;
@@ -12,7 +12,18 @@ const ButtonText = styled.Text`
   text-align: center;
 `;
 
-const StyledButton = ({ title, onPress }) => (
+export const Button = styled.Button`
+  background-color: #2563eb;
+  padding: 12px 24px;
+  border-radius: 8px;
+`;
+
+type StyledButtonProps = {
+  title: string;
+  onPress: () => void;
+};
+
+const StyledButton = ({ title, onPress }: StyledButtonProps) => (
   <Button onPress={onPress}>
     <ButtonText>{title}</ButtonText>
   </Button>

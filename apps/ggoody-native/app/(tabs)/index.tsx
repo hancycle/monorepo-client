@@ -2,7 +2,7 @@ import { Image, StyleSheet, Platform, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 import { useRef } from "react";
 import Animated from "react-native-reanimated";
-import Button from "@hancycle/ui/components/react/Button";
+import { Button } from "@hancycle/ui/components/expo/Button";
 import BottomSheet, {
   BottomSheetModal,
 } from "@hancycle/ui/components/expo/BottomSheet";
@@ -16,14 +16,15 @@ export default function HomeScreen() {
         <Animated.View>
           <Text>Home</Text>
           <Button
-            onClick={() => {
+            title="바텀시트 버튼"
+            onPress={() => {
               bottomSheetRef.current?.present();
             }}
           >
             바텀시트 버튼
           </Button>
           <BottomSheet bottomSheetRef={bottomSheetRef}>
-            <View>
+            <View style={{ flex: 1, alignItems: "center", height: 400 }}>
               <Text>BottomSheet</Text>
             </View>
           </BottomSheet>
