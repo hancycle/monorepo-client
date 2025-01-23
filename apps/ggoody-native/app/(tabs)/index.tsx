@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Platform, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
-import { useRef } from "react";
+import { useRef, RefObject } from "react";
 import Animated from "react-native-reanimated";
 import { Button } from "@hancycle/ui/components/expo/Button";
 import BottomSheet, {
@@ -8,7 +8,7 @@ import BottomSheet, {
 } from "@hancycle/ui/components/expo/BottomSheet";
 
 export default function HomeScreen() {
-  const bottomSheetRef = useRef<BottomSheetModal>(null);
+  const bottomSheetRef = useRef<BottomSheetModal>(null as any);
 
   return (
     <View style={styles.container}>

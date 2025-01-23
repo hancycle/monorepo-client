@@ -14,7 +14,7 @@ import {
   BottomSheetModalProvider,
   GestureHandlerRootView,
 } from "@hancycle/ui/components/expo/BottomSheet";
-
+import Navigation from "@hancycle/ui/components/expo/Navigation";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -38,11 +38,9 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <BottomSheetModalProvider>
-          <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="+not-found" />
-          </Stack>
-          <StatusBar style="auto" />
+          <Stack
+            screenOptions={{ headerShown: true, headerTitleAlign: "center" }}
+          />
         </BottomSheetModalProvider>
       </ThemeProvider>
     </GestureHandlerRootView>

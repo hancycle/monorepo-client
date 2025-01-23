@@ -1,0 +1,24 @@
+import { useEffect } from "react";
+import { View, Text } from "react-native";
+import { useRouter, useNavigation } from "expo-router";
+import { Button } from "@hancycle/ui/components/expo/Button";
+
+function SignUpScreen() {
+  const router = useRouter();
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: "회원가입",
+    });
+  }, [navigation]);
+
+  return (
+    <View>
+      <Text>SignUpScreen</Text>
+      <Button title="로그인으로 이동" onPress={() => router.push("/signin")} />
+    </View>
+  );
+}
+
+export default SignUpScreen;
