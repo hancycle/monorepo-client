@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { View, Text, Platform } from "react-native";
+import { View, Text, Platform, StyleSheet } from "react-native";
 import { useRouter, useNavigation } from "expo-router";
-import { Button } from "@hancycle/ui/components/expo/Button";
 import { WebView } from "react-native-webview";
 
 function HomeScreen() {
-  const router = useRouter();
+  // const router = useRouter();
   const navigation = useNavigation();
   const webViewRef = useRef<WebView>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -38,10 +37,10 @@ function HomeScreen() {
     }
   };
 
-  // const handleWebViewLoad = () => {
-  //   sendMessageToWeb();
-  //   executeJS();
-  // };
+  const handleWebViewLoad = () => {
+    sendMessageToWeb();
+    executeJS();
+  };
 
   useEffect(() => {
     navigation.setOptions({
@@ -85,33 +84,43 @@ function HomeScreen() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (isWebViewLoaded) {
-  //     handleWebViewLoad();
-  //   }
-  // }, [isWebViewLoaded]);
+  useEffect(() => {
+    if (isWebViewLoaded) {
+      handleWebViewLoad();
+    }
+  }, [isWebViewLoaded]);
 
   return (
-    <View>
-      <Text>HomeScreen</Text>
-      {Platform.OS === "web" ? (
+    <View style={styles.container}>
+      {Platform.OS === "web" && (
         <iframe
+          style={{ flex: 1, border: 0 }}
           ref={iframeRef}
           src="http://192.168.14.57:5173"
           onLoad={() => setIsIframeLoaded(true)}
         />
-      ) : (
+      )}
+      {(Platform.OS === "ios" || Platform.OS === "android") && (
         <WebView
+          style={{ flex: 1, height: 300, borderWidth: 1, borderColor: "red" }}
           ref={webViewRef}
           source={{ uri: "http://192.168.14.57:5173" }}
           javaScriptEnabled={true}
           originWhitelist={["*"]}
-          onLoad={() => setIsWebViewLoaded(true)}
+          onLoad={() => {
+            setIsWebViewLoaded(true);
+          }}
         />
       )}
-      <Button title="회원가입으로 이동" onPress={handleIFrameLoad} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+  },
+});
 
 export default HomeScreen;

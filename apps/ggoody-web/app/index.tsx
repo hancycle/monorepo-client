@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Button } from "@ggoody-ui";
 
 function HomePage() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function HomePage() {
   return (
     <div>
       HomePage
+      <Button>보내기</Button>
       <button onClick={sendMessageToNative}>보내기</button>
     </div>
   );
