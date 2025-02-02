@@ -27,26 +27,21 @@ function HomeScreen() {
 
   const handleIFrameLoad = () => {
     if (Platform.OS === "web" && iframeRef.current) {
-      console.log(
-        "꾸디 네이티브앱 > 아이프레임 로드",
-        iframeRef?.current?.contentWindow
+      console.log("1. 꾸디 네이티브앱 > 웹앱으로 데이터 전송(iframe)");
+      iframeRef?.current?.contentWindow?.postMessage(
+        JSON.stringify({
+          message: "네이티브 앱 데이터",
+          value: 42,
+        }),
+        "*"
       );
-      setTimeout(() => {
-        iframeRef?.current?.contentWindow?.postMessage(
-          JSON.stringify({
-            message: "Hello from React Native Web!",
-            value: 42,
-          }),
-          "*"
-        );
-      }, 500);
     }
   };
 
-  const handleWebViewLoad = () => {
-    sendMessageToWeb();
-    executeJS();
-  };
+  // const handleWebViewLoad = () => {
+  //   sendMessageToWeb();
+  //   executeJS();
+  // };
 
   useEffect(() => {
     navigation.setOptions({
@@ -60,6 +55,36 @@ function HomeScreen() {
     }
   }, [isIframeLoaded]);
 
+  useEffect(() => {
+    if (Platform.OS === "web") {
+      // React Native에서 보낸 메시지 수신
+      const handleMessage = (event: MessageEvent) => {
+        const allowedOrigin = "http://192.168.14.57:5173"; // 허용할 출처
+        if (event.origin !== allowedOrigin) {
+          return;
+        }
+
+        try {
+          const data = JSON.parse(event.data || "{}");
+          console.log("4. 꾸디 네이티브앱 > 웹앱 데이터 수신", data);
+          // data.setOptions();
+          navigation.setOptions({
+            title: data.message,
+          });
+        } catch (error) {
+          console.error("데이터 파싱 오류:", error);
+        }
+      };
+
+      window.addEventListener("message", handleMessage);
+
+      // 컴포넌트 언마운트 시 이벤트 리스너 제거
+      return () => {
+        window.removeEventListener("message", handleMessage);
+      };
+    }
+  }, []);
+
   // useEffect(() => {
   //   if (isWebViewLoaded) {
   //     handleWebViewLoad();
@@ -72,13 +97,13 @@ function HomeScreen() {
       {Platform.OS === "web" ? (
         <iframe
           ref={iframeRef}
-          src="http://172.30.1.43:5173"
+          src="http://192.168.14.57:5173"
           onLoad={() => setIsIframeLoaded(true)}
         />
       ) : (
         <WebView
           ref={webViewRef}
-          source={{ uri: "http://172.30.1.43:5173" }}
+          source={{ uri: "http://192.168.14.57:5173" }}
           javaScriptEnabled={true}
           originWhitelist={["*"]}
           onLoad={() => setIsWebViewLoaded(true)}
