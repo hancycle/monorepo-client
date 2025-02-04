@@ -42,7 +42,7 @@ function HomePage() {
       <SolidButton
         onClick={sendMessageToNative}
         size="large"
-        theme="gray"
+        color="gray"
         status="enabled"
       >
         보내기

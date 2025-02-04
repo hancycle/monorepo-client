@@ -58,7 +58,7 @@ function HomeScreen() {
     if (Platform.OS === "web") {
       // React Native에서 보낸 메시지 수신
       const handleMessage = (event: MessageEvent) => {
-        const allowedOrigin = "http://192.168.14.57:5173"; // 허용할 출처
+        const allowedOrigin = "http://192.168.219.124:5173"; // 허용할 출처
         if (event.origin !== allowedOrigin) {
           return;
         }
@@ -96,7 +96,7 @@ function HomeScreen() {
         <iframe
           style={{ flex: 1, border: 0 }}
           ref={iframeRef}
-          src="http://192.168.14.57:5173"
+          src="http://192.168.219.124:5173"
           onLoad={() => setIsIframeLoaded(true)}
         />
       )}
@@ -104,7 +104,7 @@ function HomeScreen() {
         <WebView
           style={{ flex: 1, height: 300, borderWidth: 1, borderColor: "red" }}
           ref={webViewRef}
-          source={{ uri: "http://192.168.14.57:5173" }}
+          source={{ uri: "http://192.168.219.124:5173" }}
           javaScriptEnabled={true}
           originWhitelist={["*"]}
           onLoad={() => {

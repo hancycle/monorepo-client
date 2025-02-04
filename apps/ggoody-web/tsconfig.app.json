@@ -28,5 +28,5 @@
       "@ggoody-ui": ["ui"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "ui"]
 }
