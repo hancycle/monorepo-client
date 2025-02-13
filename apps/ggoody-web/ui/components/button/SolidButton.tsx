@@ -1,9 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
-
-// import { ColorSemantic } from "../../tokens/color";
-// import { SizeSemantic } from "../../tokens/size";
-// import { TypoSemanticStyle } from "../../tokens/typography";
+import { getTokenKey } from "@ggoody-ui";
 
 export type SolidButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   color: "gray" | "gray-contrast" | "green" | "yellow" | "orange" | "red";
@@ -20,61 +17,87 @@ const View = styled.button<SolidButtonProps>`
   justify-content: center;
   align-items: center;
   outline: none;
-  gap: var(--hc-size-semantic-spacing-6);
+  border: none;
+  gap: var(${getTokenKey("--hc-size-semantic-spacing-6")});
+  padding: 0
+    var(
+      ${({ size }) => {
+        switch (size) {
+          case "small":
+            return getTokenKey("--hc-size-semantic-spacing-8");
+          case "medium":
+            return getTokenKey("--hc-size-semantic-spacing-12");
+          case "large":
+            return getTokenKey("--hc-size-semantic-spacing-12");
+          default:
+            return getTokenKey("--hc-size-semantic-spacing-12");
+        }
+      }}
+    );
+  border-radius: var(
+    ${({ size }) => {
+      switch (size) {
+        case "small":
+          return getTokenKey("--hc-size-semantic-border-radius-xs");
+        case "medium":
+          return getTokenKey("--hc-size-semantic-border-radius-s");
+        case "large":
+          return getTokenKey("--hc-size-semantic-border-radius-m");
+        default:
+          return getTokenKey("--hc-size-semantic-border-radius-s");
+      }
+    }}
+  );
+  height: ${({ size }) => {
+    switch (size) {
+      case "small":
+        return "32px";
+      case "medium":
+        return "44px";
+      case "large":
+        return "56px";
+      default:
+        return "44px";
+    }
+  }};
   color: var(
     ${({ color }) => {
       switch (color) {
         case "gray":
-          return "--hc-color-semantic-info-primary";
+          return getTokenKey("--hc-color-semantic-info-primary");
         case "gray-contrast":
-          return "--hc-color-semantic-info-primary-contrast";
+          return getTokenKey("--hc-color-semantic-info-primary-contrast");
         case "green":
-          return "--hc-color-semantic-info-primary-contrast";
+          return getTokenKey("--hc-color-semantic-info-primary-contrast");
         case "yellow":
-          return "--hc-color-semantic-info-primary";
+          return getTokenKey("--hc-color-semantic-info-primary");
         case "orange":
-          return "--hc-color-semantic-info-primary-contrast";
+          return getTokenKey("--hc-color-semantic-info-primary-contrast");
         case "red":
-          return "--hc-color-semantic-info-primary-contrast";
+          return getTokenKey("--hc-color-semantic-info-primary-contrast");
         default:
-          return "--hc-color-semantic-info-primary";
+          return getTokenKey("--hc-color-semantic-info-primary");
+      }
+    }}
+  );
+  background-color: var(
+    ${({ color }) => {
+      switch (color) {
+        case "gray":
+          return getTokenKey("--hc-color-semantic-surface-medium");
+        case "gray-contrast":
+          return getTokenKey("--hc-color-semantic-surface-medium-contrast");
+        case "green":
+          return getTokenKey("--hc-color-semantic-accent-green-medium");
+        case "yellow":
+          return getTokenKey("--hc-color-semantic-accent-yellow-medium");
+        case "orange":
+          return getTokenKey("--hc-color-semantic-accent-orange-medium");
+        case "red":
+          return getTokenKey("--hc-color-semantic-accent-red-medium");
+        default:
+          return getTokenKey("--hc-color-semantic-surface-medium");
       }
     }}
   );
 `;
-
-// gap: ${({ theme }) => theme.size["--hc-size-semantic-spacing-6"]};
-// color: ${({ color, theme }) => {
-//   switch (color) {
-//     case "gray":
-//       return var("--hc-color-semantic-info-primary")
-//     case "gray-contrast":
-//       return theme.color["--hc-color-semantic-info-primary-contrast"];
-//     case "green":
-//       return theme.color["--hc-color-semantic-info-primary-contrast"];
-//     case "yellow":
-//       return theme.color["--hc-color-semantic-info-primary"];
-//     case "orange":
-//       return theme.color["--hc-color-semantic-info-primary-contrast"];
-//     case "red":
-//       return theme.color["--hc-color-semantic-info-primary-contrast"];
-//     default:
-//       return theme.color["--hc-color-semantic-info-primary"];
-//   }
-// }};
-// height: ${({ size, theme }) => {
-//   switch (size) {
-//     case "small":
-//       return theme.size["--hc-size-semantic-spacing-8"];
-//     case "medium":
-//       return theme.size["--hc-size-semantic-spacing-16"];
-//     case "large":
-//       return theme.size["--hc-size-semantic-spacing-24"];
-//     default:
-//       return theme.size["--hc-size-semantic-spacing-16"];
-//   }
-// }};
-// padding-left: ${({ theme }) => theme.size["--hc-size-semantic-spacing-8"]};
-// padding-right: ${({ theme }) => theme.size["--hc-size-semantic-spacing-8"]};
-// border-radius: ${({ theme }) =>
-//   theme.size["--hc-size-semantic-border-radius-xs"]};

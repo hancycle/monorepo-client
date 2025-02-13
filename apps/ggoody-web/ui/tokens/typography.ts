@@ -144,3 +144,5 @@ export const TypoSemanticStyle = {
     font-weight: ${TypoScale["--hc-typo-scale-font-weight-medium"]};
   `,
 } as const;
+
+export type TypoSemanticStyleKeys = keyof typeof TypoSemanticStyle;

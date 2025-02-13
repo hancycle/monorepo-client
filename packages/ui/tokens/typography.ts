@@ -35,3 +35,5 @@ export const TypoScale = {
   "--hc-typo-scale-letter-spacing-medium": "-0.01em",
   "--hc-typo-scale-letter-spacing-wide": "0",
 } as const;
+
+export type TypoScaleKeys = keyof typeof TypoScale;

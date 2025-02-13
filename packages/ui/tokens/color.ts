@@ -122,3 +122,5 @@ export const ColorScale = {
   "--hc-color-scale-yellow-alpha-100": "rgba(244, 210, 30, 0.15)",
   "--hc-color-scale-yellow-alpha-200": "rgba(244, 210, 30, 0.25)",
 } as const;
+
+export type ColorScaleKeys = keyof typeof ColorScale;

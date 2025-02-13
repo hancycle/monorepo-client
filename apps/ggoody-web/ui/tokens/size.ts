@@ -40,3 +40,5 @@ export const SizeSemantic = {
   "--hc-size-semantic-spacing-120": SizeScale["--hc-size-scale-120"],
   "--hc-size-semantic-spacing-160": SizeScale["--hc-size-scale-160"],
 } as const;
+
+export type SizeSemanticKeys = keyof typeof SizeSemantic;

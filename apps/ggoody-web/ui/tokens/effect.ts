@@ -26,3 +26,6 @@ export const EffectSemanticStyle = {
     color: ${ColorScale["--hc-color-scale-common-alpha-200"]};
   `,
 };
+
+export type EffectSemanticKeys = keyof typeof EffectSemantic;
+export type EffectSemanticStyleKeys = keyof typeof EffectSemanticStyle;

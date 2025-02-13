@@ -26,3 +26,5 @@ export const SizeScale = {
   "--hc-size-scale-160": "160px",
   "--hc-size-scale-9999": "9999px",
 } as const;
+
+export type SizeScaleKeys = keyof typeof SizeScale;

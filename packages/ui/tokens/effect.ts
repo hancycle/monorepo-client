@@ -20,3 +20,5 @@ export const EffectScale = {
   "--hc-effect-scale-blur-32": "64px",
   "--hc-effect-scale-blur-40": "80px",
 } as const;
+
+export type EffectScaleKeys = keyof typeof EffectScale;

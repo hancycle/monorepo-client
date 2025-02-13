@@ -68,3 +68,5 @@ export const ColorSemantic = {
   "--hc-color-semantic-dim-high":
     ColorScale["--hc-color-scale-common-alpha-400"],
 };
+
+export type ColorSemanticKeys = keyof typeof ColorSemantic;
