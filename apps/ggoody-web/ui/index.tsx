@@ -1,4 +1,5 @@
 export * from "./components/button/SolidButton";
+export * from "./components/Typography";
 export * from "./tokens";
 export * from "./tokens/color";
 export * from "./tokens/effect";

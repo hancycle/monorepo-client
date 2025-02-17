@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { SolidButton } from "@ggoody-ui";
+import { SolidButton, Title, Subtitle, Body, Caption, Label } from "@ggoody-ui";
 
 function HomePage() {
   useEffect(() => {
@@ -38,7 +38,33 @@ function HomePage() {
 
   return (
     <div>
-      HomePage
+      <Title size="1">Title-1</Title>
+      <Title size="2">Title-2</Title>
+      <Subtitle size="1">Subtitle-1</Subtitle>
+      <Subtitle size="2">Subtitle-2</Subtitle>
+      <Subtitle size="3">Subtitle-3</Subtitle>
+      <Body size="b-1">Body-b-1</Body>
+      <Body size="b-2">Body-b-2</Body>
+      <Body size="b-3">Body-b-3</Body>
+      <Body size="b-4">Body-b-4</Body>
+      <Body size="r-1">Body-r-1</Body>
+      <Body size="r-2">Body-r-2</Body>
+      <Body size="r-3">Body-r-3</Body>
+      <Body size="r-4">Body-r-4</Body>
+      <Caption size="b-1">Caption-b-1</Caption>
+      <Caption size="b-2">Caption-b-2</Caption>
+      <Caption size="r-1">Caption-r-1</Caption>
+      <Caption size="r-2">Caption-r-2</Caption>
+      <Label size="b-1">Label-b-1</Label>
+      <Label size="b-2">Label-b-2</Label>
+      <Label size="b-3">Label-b-3</Label>
+      <Label size="b-4">Label-b-4</Label>
+      <Label size="b-5">Label-b-5</Label>
+      <Label size="r-1">Label-r-1</Label>
+      <Label size="r-2">Label-r-2</Label>
+      <Label size="r-3">Label-r-3</Label>
+      <Label size="r-4">Label-r-4</Label>
+      <Label size="r-5">Label-r-5</Label>
       <SolidButton
         onClick={sendMessageToNative}
         size="large"
