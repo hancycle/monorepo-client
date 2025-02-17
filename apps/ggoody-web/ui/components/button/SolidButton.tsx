@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
-import { getTokenKey } from "@ggoody-ui";
+import { getTokenKey, getTokenStyle } from "@ggoody-ui";
 
 export type SolidButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   color: "gray" | "gray-contrast" | "green" | "yellow" | "orange" | "red";
@@ -9,7 +9,11 @@ export type SolidButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export function SolidButton({ children, ...props }: SolidButtonProps) {
-  return <View {...props}>{children}</View>;
+  return (
+    <View {...props}>
+      <Label>{children}</Label>
+    </View>
+  );
 }
 
 const View = styled.button<SolidButtonProps>`
@@ -18,6 +22,7 @@ const View = styled.button<SolidButtonProps>`
   align-items: center;
   outline: none;
   border: none;
+  ${() => getTokenStyle("--hc-typo-semantic-label-b-1")}
   gap: var(${getTokenKey("--hc-size-semantic-spacing-6")});
   padding: 0
     var(
@@ -100,4 +105,8 @@ const View = styled.button<SolidButtonProps>`
       }
     }}
   );
+`;
+
+const Label = styled.span`
+  ${() => getTokenStyle("--hc-typo-semantic-label-b-1")}
 `;
