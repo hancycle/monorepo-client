@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
-import { getTokenKey, Label } from "@ggoody-ui";
+import { getTokenKey, Label } from "@ggoody-web/ui";
 
 export type SolidButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   color: "gray" | "gray-contrast" | "green" | "yellow" | "orange" | "red";

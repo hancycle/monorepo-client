@@ -7,7 +7,19 @@ import {
   Caption,
   Label,
   Badge,
-} from "@ggoody-ui";
+  AddOutlinedIcon,
+  AddFilledIcon,
+  CheckCircleFilledIcon,
+  CheckCircleOutlinedIcon,
+  CloseFilledIcon,
+  CloseOutlinedIcon,
+  EmphasisCircleFilledIcon,
+  EmphasisCircleOutlinedIcon,
+  InfoCircleFilledIcon,
+  InfoCircleOutlinedIcon,
+  MeatballFilledIcon,
+  MeatballOutlinedIcon,
+} from "@ggoody-web/ui";
 
 function HomePage() {
   useEffect(() => {
@@ -84,6 +96,18 @@ function HomePage() {
       <Badge size="small" color="gray">
         Badge
       </Badge>
+      <AddOutlinedIcon width={24} height={24} />
+      <AddFilledIcon width={24} height={24} />
+      <CheckCircleOutlinedIcon width={24} height={24} />
+      <CheckCircleFilledIcon width={24} height={24} />
+      <CloseOutlinedIcon width={24} height={24} />
+      <CloseFilledIcon width={24} height={24} />
+      <EmphasisCircleOutlinedIcon width={24} height={24} />
+      <EmphasisCircleFilledIcon width={24} height={24} />
+      <InfoCircleOutlinedIcon width={24} height={24} />
+      <InfoCircleFilledIcon width={24} height={24} />
+      <MeatballOutlinedIcon width={24} height={24} />
+      <MeatballFilledIcon width={24} height={24} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { TypographyProps } from "./index";
-import { getTokenStyle } from "@ggoody-ui";
+import { getTokenStyle } from "@ggoody-web/ui";
 
 export type BodyProps = TypographyProps & {
   size: "b-1" | "b-2" | "b-3" | "b-4" | "r-1" | "r-2" | "r-3" | "r-4";

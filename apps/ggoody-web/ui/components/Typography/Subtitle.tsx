@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { TypographyProps } from "./index";
-import { getTokenStyle } from "@ggoody-ui";
+import { getTokenStyle } from "@ggoody-web/ui";
 
 export type SubtitleProps = TypographyProps & {
   size: "1" | "2" | "3";
