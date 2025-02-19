@@ -1,5 +1,13 @@
 import { useEffect } from "react";
-import { SolidButton, Title, Subtitle, Body, Caption, Label } from "@ggoody-ui";
+import {
+  SolidButton,
+  Title,
+  Subtitle,
+  Body,
+  Caption,
+  Label,
+  Badge,
+} from "@ggoody-ui";
 
 function HomePage() {
   useEffect(() => {
@@ -71,8 +79,11 @@ function HomePage() {
         color="gray"
         status="enabled"
       >
-        보내기
+        Button
       </SolidButton>
+      <Badge size="small" color="gray">
+        Badge
+      </Badge>
     </div>
   );
 }

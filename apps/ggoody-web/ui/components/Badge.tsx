@@ -1,28 +1,25 @@
-import { ButtonHTMLAttributes } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import styled from "styled-components";
 import { getTokenKey, Label } from "@ggoody-ui";
 
-export type SolidButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type BadgeProps = HTMLAttributes<HTMLDivElement> & {
+  children: ReactNode;
+  size: "small" | "medium";
   color: "gray" | "gray-contrast" | "green" | "yellow" | "orange" | "red";
-  status: "enabled" | "disabled" | "loading";
-  size: "small" | "medium" | "large";
 };
 
-export function SolidButton({ children, ...props }: SolidButtonProps) {
+export function Badge({ children, size, color, ...props }: BadgeProps) {
   return (
-    <View {...props}>
-      <Label size="b-1">{children}</Label>
+    <View size={size} color={color} {...props}>
+      <Label size="r-4">{children}</Label>
     </View>
   );
 }
 
-const View = styled.button<SolidButtonProps>`
+const View = styled.div<BadgeProps>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  outline: none;
-  border: none;
-  gap: var(${getTokenKey("--hc-size-semantic-spacing-6")});
   padding: 0
     var(
       ${({ size }) => {
@@ -30,40 +27,23 @@ const View = styled.button<SolidButtonProps>`
           case "small":
             return getTokenKey("--hc-size-semantic-spacing-8");
           case "medium":
-            return getTokenKey("--hc-size-semantic-spacing-12");
-          case "large":
-            return getTokenKey("--hc-size-semantic-spacing-12");
+            return getTokenKey("--hc-size-semantic-spacing-10");
           default:
-            return getTokenKey("--hc-size-semantic-spacing-12");
+            return getTokenKey("--hc-size-semantic-spacing-10");
         }
       }}
     );
-  border-radius: var(
-    ${({ size }) => {
-      switch (size) {
-        case "small":
-          return getTokenKey("--hc-size-semantic-border-radius-xs");
-        case "medium":
-          return getTokenKey("--hc-size-semantic-border-radius-s");
-        case "large":
-          return getTokenKey("--hc-size-semantic-border-radius-m");
-        default:
-          return getTokenKey("--hc-size-semantic-border-radius-s");
-      }
-    }}
-  );
   height: ${({ size }) => {
     switch (size) {
       case "small":
-        return "32px";
+        return "20px";
       case "medium":
-        return "44px";
-      case "large":
-        return "56px";
+        return "24px";
       default:
-        return "44px";
+        return "20px";
     }
   }};
+  border-radius: var(${getTokenKey("--hc-size-semantic-border-radius-full")});
   color: var(
     ${({ color }) => {
       switch (color) {
