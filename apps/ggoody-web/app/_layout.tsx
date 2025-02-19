@@ -4,12 +4,14 @@ import styled, { createGlobalStyle } from "styled-components";
 import { ColorSemantic } from "../ui/tokens/color";
 import { EffectSemantic } from "../ui/tokens/effect";
 import { SizeSemantic } from "../ui/tokens/size";
+import { ColorScale } from "@hancycle/ui/tokens";
 
 const GlobalStyle = createGlobalStyle`
   :root {
     ${ColorSemantic}
     ${EffectSemantic}
     ${SizeSemantic}
+    ${ColorScale}
   }
 
   body {

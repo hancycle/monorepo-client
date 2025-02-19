@@ -19,6 +19,7 @@ import {
   InfoCircleOutlinedIcon,
   MeatballFilledIcon,
   MeatballOutlinedIcon,
+  Loader,
 } from "@ggoody-web/ui";
 
 function HomePage() {
@@ -108,6 +109,9 @@ function HomePage() {
       <InfoCircleFilledIcon width={24} height={24} />
       <MeatballOutlinedIcon width={24} height={24} />
       <MeatballFilledIcon width={24} height={24} />
+      <Loader size="medium" color="primary" />
+      <Loader size="medium" color="tertiary" />
+      <Loader size="medium" color="primary-contrast" />
     </div>
   );
 }
