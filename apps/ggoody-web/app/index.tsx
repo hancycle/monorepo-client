@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 import {
   SolidButton,
-  Title,
-  Subtitle,
-  Body,
-  Caption,
-  Label,
   Badge,
   AddOutlinedIcon,
   AddFilledIcon,
@@ -19,8 +14,16 @@ import {
   InfoCircleOutlinedIcon,
   MeatballFilledIcon,
   MeatballOutlinedIcon,
-  Loader,
 } from "@ggoody-web/ui";
+
+import {
+  Title,
+  Subtitle,
+  Body,
+  Caption,
+  Label,
+  Loader,
+} from "@hancycle/ui/components/react";
 
 function HomePage() {
   useEffect(() => {

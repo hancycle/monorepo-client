@@ -1,6 +1,7 @@
 import { ReactNode, HTMLAttributes } from "react";
 import styled from "styled-components";
-import { getTokenKey, Label } from "@ggoody-web/ui";
+import { Label } from "@hancycle/ui/components/react";
+import { getTokenKey } from "@hancycle/ui/tokens";
 
 export type BadgeProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;

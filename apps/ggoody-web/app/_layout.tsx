@@ -1,10 +1,12 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
-import { ColorSemantic } from "../ui/tokens/color";
-import { EffectSemantic } from "../ui/tokens/effect";
-import { SizeSemantic } from "../ui/tokens/size";
-import { ColorScale } from "@hancycle/ui/tokens";
+import {
+  ColorScale,
+  ColorSemantic,
+  EffectSemantic,
+  SizeSemantic,
+} from "@hancycle/ui/tokens";
 
 const GlobalStyle = createGlobalStyle`
   :root {
