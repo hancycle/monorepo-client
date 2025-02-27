@@ -1,6 +1,7 @@
 import { ColorScaleKeys, ColorSemanticKeys } from "./color";
 import { SizeScaleKeys, SizeSemanticKeys } from "./size";
 import {
+  EffectSemanticStyle,
   EffectScaleKeys,
   EffectSemanticKeys,
   EffectSemanticStyleKeys,
@@ -29,7 +30,8 @@ export function getTokenKey(tokenKey: HancycleTokenKeys): HancycleTokenKeys {
 }
 
 export function getTokenStyle(tokenKey: HancycleTokenStyleKeys) {
-  return TypoSemanticStyle[tokenKey];
+  const hancycleTokenStyle = { ...TypoSemanticStyle, ...EffectSemanticStyle };
+  return hancycleTokenStyle[tokenKey];
 }
 
 export * from "./color";

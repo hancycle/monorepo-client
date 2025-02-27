@@ -13,7 +13,7 @@ export const Loader = ({
   color = "primary",
   ...props
 }: LoaderProps) => {
-  return <View color={color} {...props} />;
+  return <View size={size} color={color} {...props} />;
 };
 
 const View = styled.div<LoaderProps>`

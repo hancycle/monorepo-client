@@ -63,7 +63,7 @@ import { View, Text, Button, StyleSheet } from "react-native";
 
 const Stack = createStackNavigator();
 
-const HomeScreen = ({ navigation }) => (
+const HomeScreen = ({ navigation }: { navigation: any }) => (
   <View style={styles.container}>
     <Text>Home Screen</Text>
     <Button title="Show Popup" onPress={() => navigation.navigate("Popup")} />

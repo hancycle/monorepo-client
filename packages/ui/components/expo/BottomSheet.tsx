@@ -3,7 +3,6 @@ import {
   BottomSheetModal,
   BottomSheetView,
   BottomSheetModalProvider,
-  BottomSheetBackdrop,
 } from "@gorhom/bottom-sheet";
 import { useRef, useCallback, ReactNode, RefObject } from "react";
 import { StyleSheet } from "react-native";
@@ -22,23 +21,23 @@ function BottomSheet({ children, trigger, bottomSheetRef }: BottomSheetProps) {
     console.log("handleSheetChanges", index);
   }, []);
 
-  // renders
-  const renderBackdrop = useCallback(
-    (props) => (
-      <BottomSheetBackdrop
-        {...props}
-        // appearsOnIndex={0}
-        // disappearsOnIndex={-1}
-        pressBehavior="close" // 백드롭 클릭 시 바텀시트 닫기
-        style={[
-          {
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-          },
-        ]}
-      />
-    ),
-    []
-  );
+  // // renders
+  // const renderBackdrop = useCallback(
+  //   (props: any) => (
+  //     <BottomSheetBackdrop
+  //       {...props}
+  //       // appearsOnIndex={0}
+  //       // disappearsOnIndex={-1}
+  //       pressBehavior="close" // 백드롭 클릭 시 바텀시트 닫기
+  //       style={[
+  //         {
+  //           backgroundColor: "rgba(0, 0, 0, 0.5)",
+  //         },
+  //       ]}
+  //     />
+  //   ),
+  //   []
+  // );
 
   return (
     <>
