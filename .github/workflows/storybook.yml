@@ -29,9 +29,6 @@ jobs:
       - name: Build Storybook
         run: cd packages/ui && yarn build-storybook
 
-      - name: Copy netlify.toml
-        run: cp packages/ui/netlify.toml packages/ui/storybook-static/
-
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
