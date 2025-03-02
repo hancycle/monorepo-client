@@ -1,8 +1,3 @@
-[build]
-  base = "packages/ui"
-  command = "yarn build-storybook"
-  publish = "storybook-static"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"

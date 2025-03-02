@@ -29,11 +29,10 @@ jobs:
       - name: Build Storybook
         run: cd packages/ui && yarn build-storybook
 
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-
       - name: Deploy to Netlify
-        run: netlify deploy --dir=packages/ui/storybook-static --prod --message="Deploy from GitHub Actions"
+        uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=packages/ui/storybook-static --prod
