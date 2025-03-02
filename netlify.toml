@@ -1,8 +1,10 @@
+[build.environment]
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/"
   status = 200
-  force = true
 
 [[headers]]
   for = "/*"
