@@ -3,6 +3,7 @@ import type { RuleSetRule } from "webpack";
 
 const config: StorybookConfig = {
   stories: [
+    "./Introduction.mdx",
     "../components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../tokens/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
