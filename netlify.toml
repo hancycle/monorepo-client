@@ -1,5 +1,7 @@
 [build]
-  publish = "packages/ui/storybook-static"
+  base = "packages/ui"
+  command = "yarn build-storybook"
+  publish = "storybook-static"
 
 [[redirects]]
   from = "/*"
