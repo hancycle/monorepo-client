@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/splash-ggagga.png",
-    "scheme": "myapp",
+    "scheme": "ggoody",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {

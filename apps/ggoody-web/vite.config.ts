@@ -22,7 +22,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@ggoody-web/ui": path.resolve(__dirname, "ui"),
+      "@ggoody-web/constants": path.resolve(__dirname, "constants"),
       "@hancycle/ui": path.resolve(__dirname, "../../packages/ui"),
+      "@hancycle/constants": path.resolve(
+        __dirname,
+        "../../packages/constants"
+      ),
     },
   },
 });
