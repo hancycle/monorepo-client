@@ -10,10 +10,14 @@
     "packages/*"
   ],
   "devDependencies": {
-    "netlify-cli": "^19.0.0",
     "turbo": "^2.2.3"
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "resolutions": {
+    "react-native-gesture-handler": "~2.20.2",
+    "react-native-reanimated": "~3.16.1",
+    "react-native-webview": "13.12.5"
   }
 }
