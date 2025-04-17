@@ -132,10 +132,9 @@ const styles = StyleSheet.create({
 });
 
 export {
+  BottomSheet,
   BottomSheetModalProvider,
   BottomSheetView,
   BottomSheetModal,
   GestureHandlerRootView,
 };
-
-export default BottomSheet;

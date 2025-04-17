@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useRouter, useNavigation } from "expo-router";
-import { Button } from "@hancycle/ui/components/expo/Button";
-import BottomSheet from "@hancycle/ui/components/expo/BottomSheet";
+import { Button, BottomSheet } from "@hancycle/ui-react-native";
 
 function LoginScreen() {
   const router = useRouter();
@@ -18,7 +17,7 @@ function LoginScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>LoginScreen</Text>
-      <Button title="바텀시트 열기" />
+      <Button title="바텀시트 열기" onPress={() => {}} />
 
       <BottomSheet>
         {/* <View style={styles.bottomSheetContent}>

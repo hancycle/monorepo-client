@@ -19,7 +19,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@hancycle/ui/*": ["./*"]
+      "@hancycle/ui-react-native/*": ["./*"]
     }
   },
   "include": ["components/**/*", ".storybook/**/*"],

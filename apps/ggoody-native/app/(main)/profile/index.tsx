@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { View, Text } from "react-native";
 import { useRouter, useNavigation } from "expo-router";
-import { Button } from "@hancycle/ui/components/expo/Button";
+import { Button } from "@hancycle/ui-react-native";
 
 function ProfileScreen() {
   const router = useRouter();

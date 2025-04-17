@@ -23,7 +23,7 @@ export default defineConfig({
     alias: {
       "@ggoody-web/ui": path.resolve(__dirname, "ui"),
       "@ggoody-web/constants": path.resolve(__dirname, "constants"),
-      "@hancycle/ui": path.resolve(__dirname, "../../packages/ui"),
+      "@hancycle/ui-react": path.resolve(__dirname, "../../packages/ui-react"),
       "@hancycle/constants": path.resolve(
         __dirname,
         "../../packages/constants"

@@ -117,6 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { Stack };
-
-export default Navigation;
+export { Navigation, Stack };

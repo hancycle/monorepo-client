@@ -13,7 +13,7 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 import {
   BottomSheetModalProvider,
   GestureHandlerRootView,
-} from "@hancycle/ui/components/expo/BottomSheet";
+} from "@hancycle/ui-react-native";
 import { View, StyleSheet } from "react-native";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
