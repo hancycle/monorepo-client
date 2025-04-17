@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
-import { Label } from "@hancycle/ui/components/react/typography";
-import { getTokenKey } from "@hancycle/ui/tokens";
+import { Label } from "@hancycle/ui-react";
+import { getTokenKey } from "@hancycle/ui-react";
 
 export type SolidButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   color: "gray" | "gray-contrast" | "green" | "yellow" | "orange" | "red";

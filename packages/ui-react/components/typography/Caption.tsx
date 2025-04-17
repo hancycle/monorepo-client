@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { TypographyProps } from "./index";
-import { getTokenStyle } from "@hancycle/ui/tokens";
+import { TypographyProps } from "@hancycle/ui-react";
+import { getTokenStyle } from "@hancycle/ui-react";
 
 export type CaptionProps = TypographyProps & {
   size: "b-1" | "b-2" | "r-1" | "r-2";

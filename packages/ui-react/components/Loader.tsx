@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { getTokenKey } from "@hancycle/ui/tokens";
+import { getTokenKey } from "@hancycle/ui-react";
 
 import styled from "styled-components";
 

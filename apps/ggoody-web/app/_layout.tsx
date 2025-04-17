@@ -6,7 +6,7 @@ import {
   ColorSemantic,
   EffectSemantic,
   SizeSemantic,
-} from "@hancycle/ui/tokens";
+} from "@hancycle/ui-react";
 
 const GlobalStyle = createGlobalStyle`
   :root {

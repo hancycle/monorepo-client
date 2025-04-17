@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { TypographyProps } from "./index";
-import { getTokenStyle } from "@hancycle/ui/tokens";
+import { TypographyProps } from "@hancycle/ui-react";
+import { getTokenStyle } from "@hancycle/ui-react";
 
 export type SubtitleProps = TypographyProps & {
   size: "1" | "2" | "3";

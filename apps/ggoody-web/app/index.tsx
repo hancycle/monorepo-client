@@ -23,7 +23,7 @@ import {
   Caption,
   Label,
   Loader,
-} from "@hancycle/ui/components/react";
+} from "@hancycle/ui-react";
 
 function HomePage() {
   useEffect(() => {

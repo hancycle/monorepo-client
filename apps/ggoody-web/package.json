@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@hancycle/constants": "*",
-    "@hancycle/ui": "*",
+    "@hancycle/ui-react": "*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.3"
