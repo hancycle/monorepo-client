@@ -1,28 +1,30 @@
-import styled from "styled-components/native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-const ButtonContainer = styled.TouchableOpacity`
-  background-color: #2563eb;
-  padding: 12px 24px;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: center;
-`;
-
-const ButtonText = styled.Text`
-  color: white;
-  font-size: 16px;
-  text-align: center;
-`;
-
-type ButtonProps = {
+export type ButtonProps = {
   title: string;
   onPress?: () => void;
 };
 
 export const Button = ({ title, onPress }: ButtonProps) => (
-  <ButtonContainer onPress={onPress}>
-    <ButtonText>{title}</ButtonText>
-  </ButtonContainer>
+  <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
+    <Text style={styles.buttonText}>{title}</Text>
+  </TouchableOpacity>
 );
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    backgroundColor: "#2563eb",
+    padding: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    textAlign: "center",
+  },
+});
 
 export default Button;

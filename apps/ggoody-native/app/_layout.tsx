@@ -1,20 +1,15 @@
 import "react-native-gesture-handler";
 import "react-native-reanimated";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack, Redirect } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { useColorScheme } from "@/hooks/useColorScheme";
 import {
   BottomSheetModalProvider,
   GestureHandlerRootView,
 } from "@hancycle/ui-react-native";
 import { View, StyleSheet } from "react-native";
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -26,8 +21,6 @@ const useIsAuthenticated = () => {
 };
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const isAuthenticated = useIsAuthenticated();
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
@@ -45,24 +38,20 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <BottomSheetModalProvider>
-        <ThemeProvider
-          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-        >
-          <View style={styles.container}>
-            <View style={styles.screen}>
-              <Stack
-                screenOptions={{
-                  headerShown: true,
-                  headerTitleAlign: "center",
-                  headerBackButtonDisplayMode: "generic",
-                  headerTintColor: "black",
-                }}
-              />
-              {/* 인증 상태에 따라 조건부 리다이렉션 */}
-              <Redirect href="/login" />
-            </View>
+        <View style={styles.container}>
+          <View style={styles.screen}>
+            <Stack
+              screenOptions={{
+                headerShown: true,
+                headerTitleAlign: "center",
+                headerBackButtonDisplayMode: "generic",
+                headerTintColor: "black",
+              }}
+            />
+            {/* 인증 상태에 따라 조건부 리다이렉션 */}
+            <Redirect href="/login" />
           </View>
-        </ThemeProvider>
+        </View>
       </BottomSheetModalProvider>
     </GestureHandlerRootView>
   );
