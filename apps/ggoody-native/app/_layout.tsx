@@ -49,7 +49,7 @@ export default function RootLayout() {
               }}
             />
             {/* 인증 상태에 따라 조건부 리다이렉션 */}
-            <Redirect href="/onboarding" />
+            <Redirect href="/onboarding/1" />
           </View>
         </View>
       </BottomSheetModalProvider>
@@ -67,7 +67,5 @@ const styles = StyleSheet.create({
     width: "100%",
     marginLeft: "auto",
     marginRight: "auto",
-    borderWidth: 3,
-    borderColor: "blue",
   },
 });

@@ -29,9 +29,9 @@ export const TypoScale = {
   fontWeightBold: "700",
 
   // Line Height
-  lineHeightSmall: 22, // 1.4 * 16
-  lineHeightMedium: 24, // 1.5 * 16
-  lineHeightLarge: 26, // 1.6 * 16
+  lineHeightSmall: 22,
+  lineHeightMedium: 24,
+  lineHeightLarge: 26,
 
   // Letter Spacing
   letterSpacingNarrow: -0.02,
