@@ -3,19 +3,10 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@ggoody-native/constants": [
-        "./constants"
-      ],
-      "@ggoody-native/constants/*": [
-        "./constants/*"
-      ]
+      "@/*": ["./*"],
+      "@ggoody-native/constants": ["./constants"],
+      "@ggoody-native/constants/*": ["./constants/*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

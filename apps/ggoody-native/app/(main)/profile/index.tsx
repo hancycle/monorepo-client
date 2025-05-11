@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { View, Text } from "react-native";
 import { useRouter, useNavigation } from "expo-router";
-import { Button } from "@hancycle/ui-react-native";
+import { SolidButton } from "@hancycle/ui-react-native";
 
 function ProfileScreen() {
   const router = useRouter();
@@ -16,7 +16,7 @@ function ProfileScreen() {
   return (
     <View>
       <Text>ProfileScreen</Text>
-      <Button title="홈으로 이동" onPress={() => router.push("/")} />
+      <SolidButton title="홈으로 이동" onPress={() => router.push("/")} />
     </View>
   );
 }

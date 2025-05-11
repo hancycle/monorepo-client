@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { View, Text } from "react-native";
 import { useRouter, useNavigation } from "expo-router";
-import { Button } from "@hancycle/ui-react-native";
+import { SolidButton } from "@hancycle/ui-react-native";
 
 function SignUpScreen() {
   const router = useRouter();
@@ -16,7 +16,10 @@ function SignUpScreen() {
   return (
     <View>
       <Text>SignUpScreen</Text>
-      <Button title="로그인으로 이동" onPress={() => router.push("/signin")} />
+      <SolidButton
+        title="로그인으로 이동"
+        onPress={() => router.push("/signin")}
+      />
     </View>
   );
 }

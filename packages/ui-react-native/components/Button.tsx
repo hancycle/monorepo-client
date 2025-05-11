@@ -1,18 +1,22 @@
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  TouchableOpacityProps,
+} from "react-native";
 
-export type ButtonProps = {
+export type ButtonProps = TouchableOpacityProps & {
   title: string;
-  onPress?: () => void;
 };
 
-export const Button = ({ title, onPress }: ButtonProps) => (
-  <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
-    <Text style={styles.buttonText}>{title}</Text>
+export const Button = ({ title, style, ...props }: ButtonProps) => (
+  <TouchableOpacity style={[styles.container, style]} {...props}>
+    <Text style={styles.text}>{title}</Text>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
-  buttonContainer: {
+  container: {
     backgroundColor: "#2563eb",
     padding: 12,
     paddingHorizontal: 24,
@@ -20,7 +24,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonText: {
+  text: {
     color: "white",
     fontSize: 16,
     textAlign: "center",

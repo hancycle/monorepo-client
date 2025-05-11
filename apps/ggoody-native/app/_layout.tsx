@@ -49,7 +49,7 @@ export default function RootLayout() {
               }}
             />
             {/* 인증 상태에 따라 조건부 리다이렉션 */}
-            <Redirect href="/login" />
+            <Redirect href="/onboarding" />
           </View>
         </View>
       </BottomSheetModalProvider>
@@ -60,7 +60,6 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
   },
   screen: {
     flex: 1,
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
     width: "100%",
     marginLeft: "auto",
     marginRight: "auto",
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: "blue",
   },
 });

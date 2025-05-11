@@ -45,6 +45,12 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "fonts": [
+      {
+        "asset": "@hancycle/ui-react-native/fonts/PretendardVariable.woff2",
+        "family": "Pretendard Variable"
+      }
+    ]
   }
 }
