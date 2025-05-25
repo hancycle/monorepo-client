@@ -1,7 +1,14 @@
 import { Fragment, useEffect } from "react";
-import { View, Text, StyleSheet, Image, StatusBar } from "react-native";
+import { View, StyleSheet, Image, StatusBar } from "react-native";
 import { useRouter, useNavigation, useLocalSearchParams } from "expo-router";
-import { Label, SubTitle, Body, SolidButton } from "@hancycle/ui-react-native";
+import {
+  Label,
+  SubTitle,
+  Body,
+  SolidButton,
+  KakaoButton,
+} from "@hancycle/ui-react-native";
+import { Badge } from "@ggoody-native/ui";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const onboardingBackground1 = require("./images/onboarding_background1.png");
@@ -48,6 +55,9 @@ function OnboardingScreen() {
         <View style={styles.contents}>
           {step === "1" && (
             <Fragment>
+              <Badge size="small" theme="gray-contrast">
+                Step 1
+              </Badge>
               <SubTitle size="3" style={styles.title}>
                 우리집 반려견의{`\n`}알러지 정보 등록
               </SubTitle>
@@ -59,36 +69,52 @@ function OnboardingScreen() {
           )}
           {step === "2" && (
             <Fragment>
+              <Badge size="small" theme="gray-contrast">
+                Step 2
+              </Badge>
               <SubTitle size="3" style={styles.title}>
-                원하는 사료, 간식의 성분표를 촬영
+                원하는 사료, 간식의{`\n`}성분표를 촬영
               </SubTitle>
               <Body size="R4" style={styles.description}>
-                검사하고 싶은 사료, 간식이 있나요? 포장지 뒤의 식품 성분표를
-                촬영하세요!
+                검사하고 싶은 사료, 간식이 있나요?{`\n`}포장지 뒤의 식품
+                성분표를 촬영하세요!
               </Body>
             </Fragment>
           )}
           {step === "3" && (
             <Fragment>
+              <Badge size="small" theme="gray-contrast">
+                Step 3
+              </Badge>
               <SubTitle size="3" style={styles.title}>
-                꾸디의 알러지 검사결과 확인
+                꾸디의 알러지{`\n`}검사결과 확인
               </SubTitle>
               <Body size="R4" style={styles.description}>
-                반려견의 알러지 정보를 바탕으로 식품의 성분표의 검사결과를
+                반려견의 알러지 정보를 바탕으로{`\n`}식품의 성분표의 검사결과를
                 알려드려요.
               </Body>
             </Fragment>
           )}
         </View>
         <View style={styles.buttons}>
-          <SolidButton title="건너뛰기" color="gray-contrast" size="large" />
-          <SolidButton
-            style={styles.nextButton}
-            title="다음"
-            color="red"
-            size="large"
-            onPress={handleNext}
-          />
+          {step === "3" ? (
+            <KakaoButton title="카카오로 시작하기" />
+          ) : (
+            <Fragment>
+              <SolidButton
+                title="건너뛰기"
+                color="gray-contrast"
+                size="large"
+              />
+              <SolidButton
+                style={styles.nextButton}
+                title="다음"
+                color="red"
+                size="large"
+                onPress={handleNext}
+              />
+            </Fragment>
+          )}
         </View>
       </View>
     </SafeAreaView>

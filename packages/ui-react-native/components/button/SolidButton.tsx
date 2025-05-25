@@ -36,6 +36,7 @@ export const SolidButton = ({
   return (
     <TouchableOpacity
       style={buttonStyle}
+      activeOpacity={EffectSemantic.statePressed}
       disabled={status === "disabled" || status === "loading"}
       {...props}
     >
