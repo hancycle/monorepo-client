@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { View, StyleSheet, Image, StatusBar } from "react-native";
 import { useRouter, useNavigation, useLocalSearchParams } from "expo-router";
 import {
@@ -7,6 +7,8 @@ import {
   Body,
   SolidButton,
   KakaoButton,
+  BottomSheet,
+  SizeSemantic,
 } from "@hancycle/ui-react-native";
 import { Badge } from "@ggoody-native/ui";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -18,10 +20,15 @@ const onboardingBackground3 = require("./images/onboarding_background3.png");
 function OnboardingScreen() {
   const { step } = useLocalSearchParams();
   const { push } = useRouter();
+  const [bottomSheet, setBottomSheet] = useState(false);
   const navigation = useNavigation();
 
   const handleNext = () => {
     push(`/onboarding/${Number(step) + 1}`);
+  };
+
+  const handleKakaoLogin = () => {
+    setBottomSheet(true);
   };
 
   useEffect(() => {
@@ -96,9 +103,9 @@ function OnboardingScreen() {
             </Fragment>
           )}
         </View>
-        <View style={styles.buttons}>
+        <View style={[styles.buttons]}>
           {step === "3" ? (
-            <KakaoButton title="카카오로 시작하기" />
+            <KakaoButton title="카카오로 시작하기" onPress={handleKakaoLogin} />
           ) : (
             <Fragment>
               <SolidButton
@@ -117,6 +124,25 @@ function OnboardingScreen() {
           )}
         </View>
       </View>
+      <BottomSheet title="약관 동의" isOpen={bottomSheet}>
+        <View style={styles.terms}>
+          <SubTitle size="3">
+            꾸디를 시작하면{`\n`}아래 약관에 동의하게 됩니다.
+          </SubTitle>
+          <SolidButton
+            style={styles.termsButton}
+            title="개인정보 처리방침"
+            color="gray"
+            size="medium"
+          />
+          <SolidButton
+            style={styles.termsButton}
+            title="서비스 이용정책"
+            color="gray"
+            size="medium"
+          />
+        </View>
+      </BottomSheet>
     </SafeAreaView>
   );
 }
@@ -164,6 +190,13 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     flex: 1,
+  },
+  terms: {
+    flexDirection: "column",
+    gap: SizeSemantic.spacing16,
+  },
+  termsButton: {
+    alignSelf: "flex-start",
   },
 });
 

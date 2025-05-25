@@ -60,31 +60,31 @@ export const TypoSemanticStyle = StyleSheet.create({
   title1: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize40,
-    lineHeight: getLineHeight(TypoScale.fontSize40, LINE_HEIGHT.LARGE),
+    lineHeight: getLineHeight(TypoScale.fontSize40, LINE_HEIGHT.SMALL),
     fontWeight: TypoScale.fontWeightBold,
   },
   title2: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize32,
-    lineHeight: getLineHeight(TypoScale.fontSize32, LINE_HEIGHT.LARGE),
+    lineHeight: getLineHeight(TypoScale.fontSize32, LINE_HEIGHT.SMALL),
     fontWeight: TypoScale.fontWeightBold,
   },
   subTitle1: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize28,
-    lineHeight: getLineHeight(TypoScale.fontSize28, LINE_HEIGHT.LARGE),
+    lineHeight: getLineHeight(TypoScale.fontSize28, LINE_HEIGHT.SMALL),
     fontWeight: TypoScale.fontWeightSemibold,
   },
   subTitle2: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize24,
-    lineHeight: getLineHeight(TypoScale.fontSize24, LINE_HEIGHT.LARGE),
+    lineHeight: getLineHeight(TypoScale.fontSize24, LINE_HEIGHT.SMALL),
     fontWeight: TypoScale.fontWeightSemibold,
   },
   subTitle3: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize20,
-    lineHeight: getLineHeight(TypoScale.fontSize20, LINE_HEIGHT.LARGE),
+    lineHeight: getLineHeight(TypoScale.fontSize20, LINE_HEIGHT.SMALL),
     fontWeight: TypoScale.fontWeightSemibold,
   },
   bodyB1: {
@@ -138,25 +138,25 @@ export const TypoSemanticStyle = StyleSheet.create({
   captionB1: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize13,
-    lineHeight: getLineHeight(TypoScale.fontSize13, LINE_HEIGHT.SMALL),
+    lineHeight: getLineHeight(TypoScale.fontSize13, LINE_HEIGHT.MEDIUM),
     fontWeight: TypoScale.fontWeightSemibold,
   },
   captionB2: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize12,
-    lineHeight: getLineHeight(TypoScale.fontSize12, LINE_HEIGHT.SMALL),
+    lineHeight: getLineHeight(TypoScale.fontSize12, LINE_HEIGHT.MEDIUM),
     fontWeight: TypoScale.fontWeightSemibold,
   },
   captionR1: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize13,
-    lineHeight: getLineHeight(TypoScale.fontSize13, LINE_HEIGHT.SMALL),
+    lineHeight: getLineHeight(TypoScale.fontSize13, LINE_HEIGHT.MEDIUM),
     fontWeight: TypoScale.fontWeightMedium,
   },
   captionR2: {
     ...initialTypoSemanticStyle,
     fontSize: TypoScale.fontSize12,
-    lineHeight: getLineHeight(TypoScale.fontSize12, LINE_HEIGHT.SMALL),
+    lineHeight: getLineHeight(TypoScale.fontSize12, LINE_HEIGHT.MEDIUM),
     fontWeight: TypoScale.fontWeightMedium,
   },
   labelB1: {

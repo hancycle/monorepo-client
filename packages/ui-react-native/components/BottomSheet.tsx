@@ -6,23 +6,28 @@ import {
   BottomSheetBackdrop,
 } from "@gorhom/bottom-sheet";
 import { useCallback, ReactNode, useRef, useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import {
+  Body,
+  IconMonoCloseFilled,
+} from "@hancycle/ui-react-native/components";
+import { ColorSemantic, SizeSemantic } from "@hancycle/ui-react-native/tokens";
 
 type BottomSheetProps = {
+  title?: string;
   children?: ReactNode; // 바텀시트 내부 컨텐츠
   isOpen?: boolean; // 바텀시트 표시 여부
   onClose?: () => void; // 바텀시트 닫힘 이벤트
-  bottomSheetRef?: React.RefObject<BottomSheetModal>; // 선택적으로 ref 사용 가능
 };
 
 function BottomSheet({
+  title,
   children,
   isOpen = true,
   onClose,
-  bottomSheetRef: externalRef,
 }: BottomSheetProps) {
   const internalRef = useRef<BottomSheetModal>(null);
-  const bottomSheetRef = externalRef || internalRef;
+  const bottomSheetRef = internalRef;
 
   // 바텀시트 닫힘 이벤트 핸들러
   const handleSheetChanges = useCallback(
@@ -80,9 +85,11 @@ function BottomSheet({
       <View style={styles.sheetWrapper}>
         <BottomSheetView style={[styles.sheet]}>
           <View style={[styles.header]}>
-            <Text>헤더</Text>
+            <Body size="B2" style={[styles.headerTitle]}>
+              {title}
+            </Body>
             <View style={[styles.closeButton]}>
-              <Text>X</Text>
+              <IconMonoCloseFilled width={24} height={24} fill="red" />
             </View>
           </View>
           <View style={[styles.contents]}>{children}</View>
@@ -98,8 +105,7 @@ const styles = StyleSheet.create({
     maxWidth: 468,
     marginLeft: "auto",
     marginRight: "auto",
-    borderTopRightRadius: 32,
-    borderTopLeftRadius: 32,
+    borderRadius: SizeSemantic.borderRadiusXl,
   },
   sheetWrapper: {
     flex: 1,
@@ -114,9 +120,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 52,
-    borderWidth: 1,
-    borderColor: "blue",
     marginTop: 10,
+  },
+  headerTitle: {
+    color: ColorSemantic.infoPrimary,
   },
   closeButton: {
     position: "absolute",
@@ -125,9 +132,7 @@ const styles = StyleSheet.create({
   },
   contents: {
     flexGrow: 1,
-    padding: 12,
-    borderWidth: 1,
-    borderColor: "red",
+    padding: SizeSemantic.spacing12,
   },
 });
 
