@@ -5,7 +5,9 @@
     "paths": {
       "@/*": ["./*"],
       "@ggoody-native/constants": ["./constants"],
-      "@ggoody-native/constants/*": ["./constants/*"]
+      "@ggoody-native/constants/*": ["./constants/*"],
+      "@ggoody-native/ui": ["./ui"],
+      "@ggoody-native/ui/*": ["./ui/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"]
