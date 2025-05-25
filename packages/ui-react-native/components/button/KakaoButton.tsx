@@ -4,7 +4,7 @@ import {
   TouchableOpacityProps,
 } from "react-native";
 
-import { Label } from "@hancycle/ui-react-native/components";
+import { Label, LogoKakaoIcon } from "@hancycle/ui-react-native/components";
 import {
   ColorSemantic,
   SizeSemantic,
@@ -34,6 +34,7 @@ export const KakaoButton = ({
       disabled={status === "disabled" || status === "loading"}
       {...props}
     >
+      <LogoKakaoIcon width={24} height={24} />
       <Label size="B1">{title}</Label>
     </TouchableOpacity>
   );

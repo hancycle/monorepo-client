@@ -20,7 +20,18 @@ config.resolver.nodeModulesPaths = [
   path.resolve(monorepoRoot, "node_modules"),
 ];
 
-// 추가 확장자 설정
-config.resolver.sourceExts = ["jsx", "js", "ts", "tsx", "cjs", "mjs", "json"];
+// SVG 트랜스포머 설정
+const { transformer, resolver } = config;
+
+config.transformer = {
+  ...transformer,
+  babelTransformerPath: require.resolve("react-native-svg-transformer"),
+};
+
+config.resolver = {
+  ...resolver,
+  assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+  sourceExts: [...resolver.sourceExts, "svg"],
+};
 
 module.exports = config;
