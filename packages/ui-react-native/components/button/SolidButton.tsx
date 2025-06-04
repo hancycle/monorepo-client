@@ -99,17 +99,17 @@ const styles = StyleSheet.create({
   // Sizes
   smallSize: {
     height: SizeSemantic.spacing32,
-    paddingHorizontal: SizeSemantic.spacing16,
+    paddingHorizontal: SizeSemantic.spacing8,
     borderRadius: SizeSemantic.borderRadiusXs,
   },
   mediumSize: {
     height: SizeSemantic.spacing44,
-    paddingHorizontal: SizeSemantic.spacing24,
+    paddingHorizontal: SizeSemantic.spacing12,
     borderRadius: SizeSemantic.borderRadiusS,
   },
   largeSize: {
     height: SizeSemantic.spacing56,
-    paddingHorizontal: SizeSemantic.spacing24,
+    paddingHorizontal: SizeSemantic.spacing12,
     borderRadius: SizeSemantic.borderRadiusM,
   },
   disabled: {
