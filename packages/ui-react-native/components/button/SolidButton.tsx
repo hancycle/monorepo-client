@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import {
   TouchableOpacity,
   StyleSheet,
@@ -16,11 +16,13 @@ export type SolidButtonProps = TouchableOpacityProps & {
   status?: "enabled" | "disabled" | "loading";
   size?: "small" | "medium" | "large";
   title?: string;
-  icon?: ReactElement;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
 };
 
 export const SolidButton = ({
-  icon,
+  prefix,
+  suffix,
   color = "gray",
   status = "enabled",
   size = "medium",
@@ -43,10 +45,11 @@ export const SolidButton = ({
       disabled={status === "disabled" || status === "loading"}
       {...props}
     >
-      {icon && icon}
+      {prefix && prefix}
       <Label size="B1" style={styles[`${color}Text`]}>
         {title}
       </Label>
+      {suffix && suffix}
     </TouchableOpacity>
   );
 };
