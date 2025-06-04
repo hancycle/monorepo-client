@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import {
   TouchableOpacity,
   StyleSheet,
@@ -15,9 +16,11 @@ export type SolidButtonProps = TouchableOpacityProps & {
   status?: "enabled" | "disabled" | "loading";
   size?: "small" | "medium" | "large";
   title?: string;
+  icon?: ReactElement;
 };
 
 export const SolidButton = ({
+  icon,
   color = "gray",
   status = "enabled",
   size = "medium",
@@ -40,6 +43,7 @@ export const SolidButton = ({
       disabled={status === "disabled" || status === "loading"}
       {...props}
     >
+      {icon && icon}
       <Label size="B1" style={styles[`${color}Text`]}>
         {title}
       </Label>
