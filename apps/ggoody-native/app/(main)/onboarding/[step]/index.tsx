@@ -9,6 +9,8 @@ import {
   KakaoButton,
   BottomSheet,
   SizeSemantic,
+  IconMonoInfoCircleOutlined,
+  ColorSemantic,
 } from "@hancycle/ui-react-native";
 import { Badge } from "@ggoody-native/ui";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -114,7 +116,7 @@ function OnboardingScreen() {
                 size="large"
               />
               <SolidButton
-                style={styles.nextButton}
+                style={styles.flex}
                 title="다음"
                 color="red"
                 size="large"
@@ -124,23 +126,54 @@ function OnboardingScreen() {
           )}
         </View>
       </View>
-      <BottomSheet title="약관 동의" isOpen={bottomSheet}>
+      <BottomSheet
+        title="약관 동의"
+        isOpen={bottomSheet}
+        onClose={() => setBottomSheet(false)}
+        snapPoints={[]}
+        buttons={[
+          <SolidButton
+            style={styles.flex}
+            title="모두 동의하고 꾸디 시작하기"
+            size="large"
+            color="red"
+          />,
+        ]}
+      >
         <View style={styles.terms}>
           <SubTitle size="3">
             꾸디를 시작하면{`\n`}아래 약관에 동의하게 됩니다.
           </SubTitle>
-          <SolidButton
-            style={styles.termsButton}
-            title="개인정보 처리방침"
-            color="gray"
-            size="medium"
-          />
-          <SolidButton
-            style={styles.termsButton}
-            title="서비스 이용정책"
-            color="gray"
-            size="medium"
-          />
+          <View style={styles.termsButtons}>
+            <SolidButton
+              prefix={
+                <IconMonoInfoCircleOutlined
+                  width={20}
+                  height={20}
+                  color={ColorSemantic.infoPrimary}
+                />
+              }
+              style={styles.termsButton}
+              title="개인정보 처리방침"
+              color="gray"
+              size="medium"
+              suffix={<Label size="R5">자세히</Label>}
+            />
+            <SolidButton
+              prefix={
+                <IconMonoInfoCircleOutlined
+                  width={20}
+                  height={20}
+                  color={ColorSemantic.infoPrimary}
+                />
+              }
+              style={styles.termsButton}
+              title="서비스 이용정책"
+              color="gray"
+              size="medium"
+              suffix={<Label size="R5">자세히</Label>}
+            />
+          </View>
         </View>
       </BottomSheet>
     </SafeAreaView>
@@ -188,12 +221,16 @@ const styles = StyleSheet.create({
     gap: 8,
     flexDirection: "row",
   },
-  nextButton: {
+  flex: {
     flex: 1,
   },
   terms: {
     flexDirection: "column",
     gap: SizeSemantic.spacing16,
+  },
+  termsButtons: {
+    flexDirection: "column",
+    gap: SizeSemantic.spacing8,
   },
   termsButton: {
     alignSelf: "flex-start",
