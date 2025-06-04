@@ -1,14 +1,39 @@
-export { default as IconMonoAddOutlined } from "../tokens/icon/hc-icon-mono-add-outlined.svg";
-export { default as IconMonoAddFilled } from "../tokens/icon/hc-icon-mono-add-filled.svg";
-export { default as IconMonoCheckCircleFilled } from "../tokens/icon/hc-icon-mono-check-circle-filled.svg";
-export { default as IconMonoCheckCircleOutlined } from "../tokens/icon/hc-icon-mono-check-circle-outlined.svg";
-export { default as IconMonoCloseFilled } from "../tokens/icon/hc-icon-mono-close-filled.svg";
-export { default as IconMonoCloseOutlined } from "../tokens/icon/hc-icon-mono-close-outlined.svg";
-export { default as IconMonoEmphasisCircleFilled } from "../tokens/icon/hc-icon-mono-emphasis-circle-filled.svg";
-export { default as IconMonoEmphasisCircleOutlined } from "../tokens/icon/hc-icon-mono-emphasis-circle-outlined.svg";
-export { default as IconMonoInfoCircleFilled } from "../tokens/icon/hc-icon-mono-info-circle-filled.svg";
-export { default as IconMonoInfoCircleOutlined } from "../tokens/icon/hc-icon-mono-info-circle-outlined.svg";
-export { default as IconMonoMeatballFilled } from "../tokens/icon/hc-icon-mono-meatball-filled.svg";
-export { default as IconMonoMeatballOutlined } from "../tokens/icon/hc-icon-mono-meatball-outlined.svg";
+import type { FC } from "react";
+import type { SvgProps as ReactNativeSvgProps } from "react-native-svg";
 
-export { default as IconColorLogoKakao } from "../tokens/icon/hc-icon-color-logo-kakao.svg";
+export type SvgProps = ReactNativeSvgProps;
+
+import IconMonoAddOutlinedSvg from "../tokens/icon/hc-icon-mono-add-outlined.svg";
+import IconMonoAddFilledSvg from "../tokens/icon/hc-icon-mono-add-filled.svg";
+import IconMonoCheckCircleFilledSvg from "../tokens/icon/hc-icon-mono-check-circle-filled.svg";
+import IconMonoCheckCircleOutlinedSvg from "../tokens/icon/hc-icon-mono-check-circle-outlined.svg";
+import IconMonoCloseFilledSvg from "../tokens/icon/hc-icon-mono-close-filled.svg";
+import IconMonoCloseOutlinedSvg from "../tokens/icon/hc-icon-mono-close-outlined.svg";
+import IconMonoEmphasisCircleFilledSvg from "../tokens/icon/hc-icon-mono-emphasis-circle-filled.svg";
+import IconMonoEmphasisCircleOutlinedSvg from "../tokens/icon/hc-icon-mono-emphasis-circle-outlined.svg";
+import IconMonoInfoCircleFilledSvg from "../tokens/icon/hc-icon-mono-info-circle-filled.svg";
+import IconMonoInfoCircleOutlinedSvg from "../tokens/icon/hc-icon-mono-info-circle-outlined.svg";
+import IconMonoMeatballFilledSvg from "../tokens/icon/hc-icon-mono-meatball-filled.svg";
+import IconMonoMeatballOutlinedSvg from "../tokens/icon/hc-icon-mono-meatball-outlined.svg";
+import IconColorLogoKakaoSvg from "../tokens/icon/hc-icon-color-logo-kakao.svg";
+
+export const IconMonoAddOutlined: FC<SvgProps> = IconMonoAddOutlinedSvg;
+export const IconMonoAddFilled: FC<SvgProps> = IconMonoAddFilledSvg;
+export const IconMonoCheckCircleFilled: FC<SvgProps> =
+  IconMonoCheckCircleFilledSvg;
+export const IconMonoCheckCircleOutlined: FC<SvgProps> =
+  IconMonoCheckCircleOutlinedSvg;
+export const IconMonoCloseFilled: FC<SvgProps> = IconMonoCloseFilledSvg;
+export const IconMonoCloseOutlined: FC<SvgProps> = IconMonoCloseOutlinedSvg;
+export const IconMonoEmphasisCircleFilled: FC<SvgProps> =
+  IconMonoEmphasisCircleFilledSvg;
+export const IconMonoEmphasisCircleOutlined: FC<SvgProps> =
+  IconMonoEmphasisCircleOutlinedSvg;
+export const IconMonoInfoCircleFilled: FC<SvgProps> =
+  IconMonoInfoCircleFilledSvg;
+export const IconMonoInfoCircleOutlined: FC<SvgProps> =
+  IconMonoInfoCircleOutlinedSvg;
+export const IconMonoMeatballFilled: FC<SvgProps> = IconMonoMeatballFilledSvg;
+export const IconMonoMeatballOutlined: FC<SvgProps> =
+  IconMonoMeatballOutlinedSvg;
+export const IconColorLogoKakao: FC<SvgProps> = IconColorLogoKakaoSvg;
