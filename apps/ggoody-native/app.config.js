@@ -34,7 +34,7 @@ module.exports = {
   extra: {
     ...envVars,
     eas: {
-      projectId: "68a64298-8cd3-4026-a6ed-be2ceca7c6e4",
+      projectId: envVars.EAS_PROJECT_ID,
     },
   },
 };
