@@ -15,6 +15,8 @@
     "ios:stg": "APP_ENV=stg expo start --ios",
     "ios:prod": "APP_ENV=prod expo start --ios",
     "web": "APP_ENV=dev expo start --web",
+    "web:stg": "APP_ENV=stg expo start --web",
+    "web:prod": "APP_ENV=prod expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
     "build:dev": "eas build --profile development",

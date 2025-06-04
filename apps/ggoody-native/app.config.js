@@ -4,8 +4,9 @@ const { getEnvVars } = require("./environment");
 const envVars = getEnvVars(process.env.APP_ENV || "dev");
 
 module.exports = {
+  owner: "sungjinmoon",
   name: "ggoody-native",
-  slug: "ggoody-native",
+  slug: "ggoody",
   version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/images/splash-ggagga.png",
@@ -33,7 +34,7 @@ module.exports = {
   extra: {
     ...envVars,
     eas: {
-      projectId: "your-project-id",
+      projectId: "68a64298-8cd3-4026-a6ed-be2ceca7c6e4",
     },
   },
 };
