@@ -5,7 +5,7 @@ import {
   BottomSheetModalProvider,
   BottomSheetBackdrop,
 } from "@gorhom/bottom-sheet";
-import { useCallback, ReactNode, useRef, useEffect } from "react";
+import { useCallback, ReactNode, useRef, useEffect, Fragment } from "react";
 import { View, StyleSheet } from "react-native";
 import {
   Body,
@@ -18,6 +18,8 @@ type BottomSheetProps = {
   children?: ReactNode; // 바텀시트 내부 컨텐츠
   isOpen?: boolean; // 바텀시트 표시 여부
   onClose?: () => void; // 바텀시트 닫힘 이벤트
+  snapPoints?: Array<string | number>;
+  buttons?: Array<ReactNode>;
 };
 
 function BottomSheet({
@@ -25,6 +27,8 @@ function BottomSheet({
   children,
   isOpen = true,
   onClose,
+  snapPoints = ["50%"],
+  buttons,
 }: BottomSheetProps) {
   const internalRef = useRef<BottomSheetModal>(null);
   const bottomSheetRef = internalRef;
@@ -73,7 +77,7 @@ function BottomSheet({
     <BottomSheetModal
       style={[styles.container]}
       ref={bottomSheetRef}
-      snapPoints={["50%"]}
+      snapPoints={snapPoints}
       backdropComponent={renderBackdrop}
       handleComponent={null}
       enablePanDownToClose={false}
@@ -98,6 +102,11 @@ function BottomSheet({
             </View>
           </View>
           <View style={[styles.contents]}>{children}</View>
+          <View style={[styles.buttons]}>
+            {buttons?.map((button, index) => (
+              <Fragment key={index}>{button}</Fragment>
+            ))}
+          </View>
         </BottomSheetView>
       </View>
     </BottomSheetModal>
@@ -126,6 +135,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 52,
     marginTop: 10,
+    flexGrow: 1,
   },
   headerTitle: {
     color: ColorSemantic.infoPrimary,
@@ -139,6 +149,12 @@ const styles = StyleSheet.create({
   contents: {
     flexGrow: 1,
     padding: SizeSemantic.spacing12,
+  },
+  buttons: {
+    paddingHorizontal: SizeSemantic.spacing12,
+    paddingVertical: SizeSemantic.spacing8,
+    gap: SizeSemantic.spacing8,
+    flexDirection: "row",
   },
 });
 
