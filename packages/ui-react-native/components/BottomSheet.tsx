@@ -89,7 +89,12 @@ function BottomSheet({
               {title}
             </Body>
             <View style={[styles.closeButton]}>
-              <IconMonoCloseFilled width={24} height={24} fill="red" />
+              <IconMonoCloseFilled
+                width={24}
+                height={24}
+                color={ColorSemantic.infoPrimary}
+                onPress={onClose}
+              />
             </View>
           </View>
           <View style={[styles.contents]}>{children}</View>
@@ -129,6 +134,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 14,
     right: 12,
+    cursor: "pointer",
   },
   contents: {
     flexGrow: 1,
